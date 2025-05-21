@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from Kopa-Hela.vercel.app/otherdetails.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:02:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.html">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.html">
+    <link rel="manifest" href="images/site.html">
+    <title>Kopa Hela</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+                            /* PWA Install Popup Styles */
+                            #pwa-install-popup {
+                      display: none;
+                      position: fixed;
+                      top: 45%;
+                      left: 4%;
+                      width: 100%;
+                      height: 100%;
+                      background: transparent;
+                      z-index: 1000;
+                      justify-content: center;
+                      align-items: center;
+                  }
+          
+                  .pwa-popup-content {
+                      background: transparent;
+                      width: 90%;
+                      max-width: 400px;
+                      border-radius: 20px;
+                      padding: 2rem;
+                      text-align: center;
+                      box-shadow: 0 4px 20px transparent;
+                  }
+          
+                  .pwa-popup-content img {
+                      width: 150px;
+                      height: 150px;
+                      margin: 1rem auto;
+                      display: block;
+                  }
+          
+                  .pwa-popup-buttons {
+                      display: flex;
+                      justify-content: space-between;
+                      margin-top: 1rem;
+                  }
+          
+                  .pwa-popup-buttons button {
+                      flex: 1;
+                      margin: 0 0.5rem;
+                      padding: 1rem;
+                      border: none;
+                      border-radius: 8px;
+                      cursor: pointer;
+                      font-weight: bold;
+                  }
+          
+                  .pwa-install-btn {
+                      background: linear-gradient(135deg, #00ff59, #206f83);
+                      color: white;
+                  }
+          
+                  .pwa-cancel-btn {
+                      background: #f1f1f1;
+                      color: #333;
+                  }
+          
+                  .gif-container img {
+                      max-width: 20%;
+                      height: auto;
+                      border-radius: 8px;
+                  }
+    </style>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16796381114">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16796381114');
+</script>
+    <!-- Event snippet for Submit lead form (1) conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16796381114/B2wTCIfS7_cZELrfkck-'});
+</script>
+</head>
+
+<body onload="pageopen()">
+                <!-- PWA Install Popup -->
+                <div id="pwa-install-popup">
+                    <div class="pwa-popup-content">
+                        <div class="gif-container">
+                            <img src="assets/process.gif" alt="Authorization GIF" id="gifcontent">
+                        </div>
+                    </div>
+                </div>
+
+    <!-- Preloader Section -->
+    <div class="preloader" id="preloader" style="opacity: 0; display: none;">
+        <div class="loader">
+            <div class="arc"></div>
+            <div class="arc"></div>
+            <div class="arc"></div>
+        </div>
+        <div class="preloader-text">Loading, please wait...</div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kopa Hela</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Section with Content -->
+        <div class="left-content">
+            <h1>Kopa <br> Hela</h1>
+            <p>
+                Let us help you manage your finances effortlessly.
+                Get a loan for business, personal needs, emergencies, or more.
+            </p>
+        </div>
+
+        <!-- Form Section (Aligned to the Right) -->
+        <div class="form-wrapper">
+            <h1>Find Your Loan Eligibility</h1>
+            <h3>We offer loans from Ksh. 2,000 - 50,000 loan to MPESA</h3>
+
+            <form id="loanForms">
+                <select id="education" required="">
+                    <option value="" disabled="" selected="">Level of Education</option>                    
+                    <option value="Secondary and High School">Secondary and High School</option>                    
+                    <option value="Diploma and Certificate">Diploma and Certificate</option>
+                    <option value="Bachelor Degree">Bachelor Degree</option>
+                    <option value="Master Degree">Master Degree</option>
+                    <option value="PHD Degree">PHD Degree</option>
+                </select>
+                <select id="employment" required="">
+                    <option value="" disabled="" selected="">Employment</option>                    
+                    <option value="mozambique">Student</option>
+                    <option value="ghana">Working</option>                  
+                    <option value="drc">Unemployed</option>
+                    <option value="ndergraduate">Self-employed</option>
+                    <option value="others">Others</option>
+                </select>
+                <select id="Income" required="">
+                    <option value="" disabled="" selected="">Monthly Income</option>                    
+                    <option value="mozambique">0 - 10,000</option>
+                    <option value="ghana">10,000 - 25,000</option>                  
+                    <option value="drc">25,000 - 35,000</option>
+                    <option value="ndergraduate">35,000 - 45,000</option>
+                    <option value="others">50,000 + </option>
+                </select>
+                <select id="Income" required="">
+                    <option value="" disabled="" selected="">Loan Purpose</option>                    
+                    <option value="mozambique">Personal Expense</option>
+                    <option value="ghana">Business Loan</option>                  
+                    <option value="drc">Emergency Loan</option>
+                    <option value="ndergraduate">Student Loan</option>
+                </select>
+                <h8><span style="color: red;">Referee * </span>:</h8>
+                <input id="Refname" placeholder="Names" required="">
+                <input id="Refphone" placeholder="Phone Number" required="">
+                <select id="Relationship" required="">
+                    <option value="" disabled="" selected="">Relationship</option>
+                    <option value="Personal">Parent</option>
+                    <option value="Car">Brother</option>
+                    <option value="Business">Sister</option>
+                    <option value="Education">Friend</option>
+                    <option value="Emergency">Others</option>
+                </select>
+                <!--select id="loanType" required="">
+                    <option value="" disabled="" selected="">Select Loan Type</option>
+                    <option value="Personal">Personal Loan</option>
+                    <option value="Car">Car Loan</option>
+                    <option value="Business">Business Loan</option>
+                    <option value="Education">Education Loan</option>
+                    <option value="Emergency">Emergency Loan</option>
+                </select-->
+                <button onclick="nextpage()">Submit Details</button>
+            </form>
+            <p class="note">No CRB Check. No Guarantors. Disbursed to MPESA. No Paperwork.</p>
+
+            <p class="disclaimer">
+                By submitting you confirm that you accept the <a href="#">Terms and Conditions</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+        </div>
+    </div>
+
+    <!--script src="index.js"></script-->
+    <script>
+        function pageopen() {
+            //let pwaInstallPopup = document.getElementById('pwa-install-popup');
+            //pwaInstallPopup.style.display = 'flex';
+        }
+
+// Format Phone Number Based on Selected Country
+function formatPhoneNumber(phone, country) {
+  const countryInfo = {
+    kenya: { code: "254" },
+    tanzania: { code: "255" },
+    mozambique: { code: "258" },
+    drc: { code: "243" },
+    lesotho: { code: "266" },
+    ghana: { code: "233" },
+    egypt: { code: "20" },
+    afghanistan: { code: "93" },
+    south_africa: { code: "27" },
+    ethiopia: { code: "251" }
+  };
+  const countryCode = countryInfo[country]?.code || "254";
+  let formattedPhone = phone.replace(/^\+/, ""); // Remove any leading "+"
+
+  if (formattedPhone.startsWith("0")) {
+    formattedPhone = countryCode + formattedPhone.slice(1); // Replace leading "0" with country code
+  } else if (!formattedPhone.startsWith(countryCode)) {
+    formattedPhone = countryCode + formattedPhone; // Add country code if not present
+  }
+  return formattedPhone;
+}
+
+// Handle Form Submission and Redirect
+document.getElementById("loanForms").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent page reload
+
+  // Get form values
+  const education = document.getElementById("education").value;
+  const employment = document.getElementById("employment").value;
+  const Income = document.getElementById("Income").value;
+  const Refname = document.getElementById("Refname").value;
+  const Refphone = document.getElementById("Refphone").value;
+
+  // Validate input values
+  if (!education || !employment || !Income || !Refname || !Refname) {
+    alert("Please fill in all fields before submitting.");
+    return;
+  }
+
+  // Format phone number based on selected country
+  //const formattedPhone = formatPhoneNumber(phone, selectedCountry);
+
+  // Store values in localStorage
+  localStorage.setItem("educate", education);
+  localStorage.setItem("employ", employment);
+  localStorage.setItem("idNumber", Income);
+  localStorage.setItem("loanType", Refname);
+  localStorage.setItem("country", Refphone);
+  localStorage.setItem('visited', 'true');
+
+  // Redirect to loan details page
+  //window.location.href = "eligibilitycheck.html";
+  let pwaInstallPopup = document.getElementById('pwa-install-popup');
+    pwaInstallPopup.style.display = 'block';
+    setTimeout(() => {
+               // if (!hasSeenInstallPrompt) {
+                window.location.href = 'eligibilitycheck.html';
+                pwaInstallPopup.style.display = 'none';
+               // }
+            }, 3000);
+  console.log('********')
+});
+
+        function nextpage() {
+
+    //let pwaInstallPopup = document.getElementById('pwa-install-popup');
+    //pwaInstallPopup.style.display = 'block';
+    //setTimeout(() => {
+      //          window.location.href = 'eligibilitycheck.html';
+        //    }, 5000);
+
+        }
+    </script>
+
+    <footer>
+        <p>© 2025 Kopa Hela. All rights reserved. <a href="index.html">Home</a></p>
+    </footer>
+
+
+
+</body>
+
+<!-- Mirrored from Kopa-Hela.vercel.app/otherdetails.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:03:29 GMT -->
+</html>

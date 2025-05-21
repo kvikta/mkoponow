@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from KOPA HELA.vercel.app/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.html">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.html">
+    <link rel="manifest" href="images/site.html">
+    <title>KOPA HELA</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* PWA Install Popup Styles */
+        #pwa-install-popup {
+  display: none;
+  position: fixed;
+  top: 45%;
+  left: 4%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.pwa-popup-content {
+  background: transparent;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px transparent;
+}
+
+.pwa-popup-content img {
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.pwa-popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pwa-popup-buttons button {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pwa-install-btn {
+  background: linear-gradient(135deg, #00ff59, #206f83);
+  color: white;
+}
+
+.pwa-cancel-btn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.gif-container img {
+  max-width: 20%;
+  height: auto;
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+                    <!-- PWA Install Popup -->
+                    <div id="pwa-install-popup">
+                        <div class="pwa-popup-content">
+                            <div class="gif-container">
+                                <img src="assets/process.gif" alt="Authorization GIF" id="gifcontent">
+                            </div>
+                        </div>
+                    </div>
+
+
+    <!-- Preloader Section -->
+    <div class="preloader" id="preloader" style="opacity: 0; display: none;">
+        <div class="loader">
+            <div class="arc"></div>
+            <div class="arc"></div>
+            <div class="arc"></div>
+        </div>
+        <div class="preloader-text">Loading, please wait...</div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">KOPA HELA</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Section with Content -->
+        <div class="left-content">
+            <h1>KOPA <br> Hela</h1>
+            <p>
+                Let us help you manage your finances effortlessly.
+                Get a loan for business, personal needs, emergencies, or more.
+            </p>
+        </div>
+
+        <!-- Form Section (Aligned to the Right) -->
+        <div class="form-wrapper">
+            <h1>Find Your Loan Eligibility</h1>
+            <h3>We offer loans from Ksh. 2,000 - 50,000 loan to MPESA</h3>
+
+            <form id="loanForm">
+                <input type="text" id="names" placeholder="Your Name" required="">
+                <select id="country" required="">
+                    <option value="" disabled="" selected="">Select County</option>
+                    <option value="kenya">Mombasa</option>
+                    <option value="tanzania">Kwale</option>
+                    <option value="mozambique">Kilifi</option>
+                    <option value="drc">Tana River</option>
+                    <option value="kenya">Lamu</option>
+                    <option value="tanzania">Taita Taveta</option>
+                    <option value="mozambique">Garisa</option>
+                    <option value="drc">Wajir</option>
+                    <option value="kenya">Mandera</option>
+                    <option value="tanzania">Marsabit</option>
+                    <option value="mozambique">Isiolo</option>
+                    <option value="drc">Meru</option>
+                    <option value="lesotho">Tharaka Nithi</option>
+                    <option value="ghana">Embu</option>
+                    <option value="egypt">Kitui</option>
+                    <option value="afghanistan">Machakos</option>
+                    <option value="south_africa">Makueni</option>
+                    <option value="lesotho">Nyandarua</option>
+                    <option value="ghana">Nyeri</option>
+                    <option value="egypt">Kirinyaga</option>
+                    <option value="afghanistan">Muranga</option>
+                    <option value="south_africa">Kiambu</option>
+                    <option value="tanzania">Turkana</option>
+                    <option value="mozambique">West Pokot</option>
+                    <option value="drc">Samburu</option>
+                    <option value="lesotho">Trans Nzoia</option>
+                    <option value="ghana">Uasin Gishu</option>
+                    <option value="egypt">Elgeyo Marakwet</option>
+                    <option value="afghanistan">Nandi</option>
+                    <option value="south_africa">Baringo</option>
+                    <option value="lesotho">Laikipia</option>
+                    <option value="ghana">Nakuru</option>
+                    <option value="egypt">Narok</option>
+                    <option value="afghanistan">Kajiado</option>
+                    <option value="lesotho">Kericho</option>
+                    <option value="ghana">Bomet</option>
+                    <option value="egypt">Kakamega</option>
+                    <option value="afghanistan">Vihiga</option>
+                    <option value="south_africa">Bungoma</option>
+                    <option value="lesotho">Busia</option>
+                    <option value="ghana">Siaya</option>
+                    <option value="egypt">Kisumu</option>
+                    <option value="afghanistan">Homa Bay</option>
+                    <option value="south_africa">Migori</option>
+                    <option value="south_africa">Kisii</option>
+                    <option value="ethiopia">Nyamira</option>
+                    <option value="egypt">Nairobi</option>
+                </select>
+                <input type="tel" id="mpesas" placeholder="MPESA Phone Number" required="">
+                <input type="text" id="idNumber" placeholder="National ID Number" required="">
+                <select id="loanType" required="">
+                    <option value="" disabled="" selected="">Select Gender</option>
+                    <option value="Personal">Female</option>
+                    <option value="Car">Male</option>
+                    <option value="Business">Other</option>
+                </select>
+                <input id="DOB" placeholder="Date of Birth: dd/mm/yy" required="">
+                <select id="maritalstatus" required="">
+                    <option value="" disabled="" selected="">Marital Status</option>
+                    <option value="Personal">Single</option>
+                    <option value="Car">Married</option>
+                    <option value="Business">Divorced</option>
+                </select>
+                <button type="submit">Next</button>
+            </form>
+            <p class="note">No CRB Check. No Guarantors. Disbursed to MPESA. No Paperwork.</p>
+
+            <p class="disclaimer">
+                By submitting you confirm that you accept the <a href="#">Terms and Conditions</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <footer>
+        <p>© 2025 KOPA HELA. All rights reserved. <a href="index.html">Home</a></p>
+    </footer>
+
+
+
+</body>
+<!-- Mirrored from KOPA HELA.vercel.app/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:20 GMT -->
+</html>

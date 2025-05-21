@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from Kopa-Hela.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureLend - Your Trusted Financial Partner.</title>
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="manifest.json">
+    
+        <!-- iOS Support -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Kopa Hela">
+        
+        <!-- Favicon and Icons -->
+        <link rel="icon" type="image/png" href="images/icons/icon-72x72.html">
+        <link rel="apple-touch-icon" href="images/icons/icon-192x192.html">
+        
+        <!-- Theme Color for Mobile Browsers -->
+        <meta name="theme-color" content="#3f4bef">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #2c3749;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #fff;
+            border-top: 4px solid #4776E6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 999;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .main-panel {
+            flex: 1;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            padding: 1.5rem;
+            background: rgba(237, 242, 247, 0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .benefit-title {
+            color: #2c5282;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .description-label {
+            display: block;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            color: #2c5282;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .terms-checkbox {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(237, 242, 247, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .next-button {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 82, 130, 0.3);
+        }
+
+        .next-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 82, 130, 0.4);
+        }
+
+        .rate-banner {
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .rate-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2d3748;
+            color: white;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .main-panel {
+                margin: 1.5rem;
+                padding: 1.5rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+                /* PWA Install Popup Styles */
+                #pwa-install-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pwa-popup-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .pwa-popup-content img {
+            width: 150px;
+            height: 150px;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .pwa-popup-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .pwa-popup-buttons button {
+            flex: 1;
+            margin: 0 0.5rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .pwa-install-btn {
+            background: linear-gradient(135deg, #0c17ee, #35b6fb);
+            color: white;
+        }
+
+        .pwa-cancel-btn {
+            background: #f1f1f1;
+            color: #333;
+        }
+        /*------------------------------------------------------------------------------------------*/
+                                    /* PWA Install Popup Styles */
+                                    #pwa-install-popups {
+                      display: none;
+                      position: fixed;
+                      top: 45%;
+                      left: 4%;
+                      width: 100%;
+                      height: 100%;
+                      background: transparent;
+                      z-index: 1000;
+                      justify-content: center;
+                      align-items: center;
+                  }
+          
+                  .pwa-popup-contents {
+                      background: transparent;
+                      width: 90%;
+                      max-width: 400px;
+                      border-radius: 20px;
+                      padding: 2rem;
+                      text-align: center;
+                      box-shadow: 0 4px 20px transparent;
+                  }
+          
+                  .pwa-popup-contents img {
+                      width: 50px;
+                      height: 50px;
+                      margin: 1rem auto;
+                      display: block;
+                  }
+          
+                  .gif-container img {
+                      max-width: 20%;
+                      height: auto;
+                      border-radius: 8px;
+                  }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16846853802">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16846853802');
+</script>
+<!-- Event snippet for Page view conversion page -->
+<script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16846853802/y2sMCNqswJ0aEKqtmuE-',
+        'value': 1.0,
+        'currency': 'ILS'
+    });
+  </script>
+
+</head>
+<body>
+    <div class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- PWA Install Popup -->
+    <div id="pwa-install-popup">
+        <div class="pwa-popup-content">
+            <div class="logo">
+                <h1>Kopa<br>Hela</h1>
+            </div>
+            <h2>Install Kopa Hela</h2>
+            <p>For easy follow up, it is a requirement that you <strong>INSTALL</strong> our app!</p>
+            <!--img src="/images/icons/icon-192x192.png" alt="Mkopo ChapChap App Icon"-->
+            <div class="pwa-popup-buttons">
+                <!--button class="pwa-cancel-btn" onclick="dismissPWAPopup()">Not Now</button-->
+                <button class="pwa-install-btn" onclick="installPWA()">Install App</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-panel">
+        <h1 class="hero-title">Kopa Hela Loans Up to Ksh 50,000</h1>
+        
+        <div class="rate-banner">
+            <p>Apply Now!!</p>
+            <p class="rate-text">Get Your Loan with 8% Interest Rate</p>
+            <p>No CRB check required</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3 class="benefit-title">Quick Approval</h3>
+                <p>Get pre-approved in minutes with our streamlined digital process</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">Flexible Terms</h3>
+                <p>Choose loan terms from 12 to 60 months that fit your budget</p>
+            </div>
+        </div>
+        
+        <div class="terms-checkbox">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">
+                I agree to receive information about loan offers and understand the <a href="#" id="termsLink">Terms and Conditions</a>
+            </label>
+        </div>
+
+        <button class="next-button">Start Loan Application</button>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Secure Loan Financial Services. All rights reserved.Services subject to terms and conditions.</p>
+    </footer>
+
+    <script>
+        // Existing Service Worker and other scripts from the previous document
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // PWA Install Popup Logic
+        let deferredPrompt;
+        let pwaInstallPopup = document.getElementById('pwa-install-popup');
+
+        // Capture the install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+
+            // Check if user has already dismissed the prompt
+            //const hasSeenInstallPrompt = localStorage.getItem('pwaInstallPromptDismissed');
+            
+            // Show popup after 2 seconds if not previously dismissed
+            setTimeout(() => {
+               // if (!hasSeenInstallPrompt) {
+                    pwaInstallPopup.style.display = 'flex';
+               // }
+            }, 1000);
+        });
+
+        // Install PWA
+        function installPWA() {
+            // Hide the popup
+            pwaInstallPopup.style.display = 'none';
+            
+            // Show the install prompt
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the PWA install');
+                        localStorage.setItem('pwaInstallPromptDismissed', 'true');
+                    } else {
+                        console.log('User dismissed the PWA install');
+                    }
+                    
+                    // Reset the deferredPrompt
+                    deferredPrompt = null;
+                });
+            }
+        }
+
+        // Dismiss PWA Popup
+        function dismissPWAPopup() {
+            pwaInstallPopup.style.display = 'none';
+            // Remember that user has dismissed the prompt
+            localStorage.setItem('pwaInstallPromptDismissed', 'true');
+        }
+
+        //--------------------------------------------------------------------------------------------------
+
+        //-------------------------------------------------------------------------------------------------
+        // Existing page load and other functions
+//        window.onload = function () {
+            // Check if app is already loaded
+  //          if (localStorage.getItem('loanapplied') === 'true') {
+    //            window.location.href = 'reviewpage.html';
+      //      } else if (localStorage.getItem('visited') === 'true') {
+        //        window.location.href = 'upplication-details.html';
+          //  }
+
+        //    document.getElementById('welcomeScreen').style.display = 'block';
+        //};
+
+        // [Rest of the existing JavaScript remains the same]
+    </script>
+
+    <script>
+        const termsCheckbox = document.getElementById('terms');
+        const nextButton = document.querySelector('.next-button');
+        const termsLink = document.getElementById('termsLink');
+        const loadingOverlay = document.querySelector('.loading-overlay');
+
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        termsCheckbox.addEventListener('change', function() {
+           // nextButton.disabled = !this.checked;
+            if (this.checked) {
+                nextButton.style.transform = 'scale(1.03)';
+                setTimeout(() => {
+                    nextButton.style.transform = 'scale(1)';
+                }, 200);
+            }
+        });
+
+        nextButton.addEventListener('click', function() {
+            //if (termsCheckbox.checked) {
+                this.innerHTML = 'Please wait...';
+                this.style.opacity = '0.8';
+                loadingOverlay.style.display = 'flex';
+                
+                setTimeout(() => {
+                    this.innerHTML = 'Proceed to Loan Application';
+                    this.style.opacity = '1';
+                    loadingOverlay.style.display = 'none';
+                    if (localStorage.getItem('review')) {
+                        window.location.href = 'reviewpage.html';
+                    } else {
+                    window.location.href = 'login.html';
+                    }
+                }, 2000);
+            //}
+        });
+
+        termsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+            loadingOverlay.style.display = 'flex';
+            
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                loadingOverlay.style.display = 'none';
+                window.location.href = 'https://www.hfgroup.co.ke/assets/HFC-PERSONAL-LOAN-FORMS-FINAL.e4cbefff.pdf';
+            }, 2000);
+        });
+    </script>
+</body>
+
+<!-- Mirrored from Kopa-Hela.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:26 GMT -->
+</html>

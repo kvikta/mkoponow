@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from Kopa-Hela.vercel.app/eligibilitycheck.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:03:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #209bde;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: linear-gradient(135deg, #209bde, #070930);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .gif-container img {
+            max-width: 20%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .timer {
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .waiting-label {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6b73ff, #00ff59);
+            color: white;
+            transition: background-color 0.3s;
+            align-items: center;
+            align-self: center;
+            align-content: center;
+            margin-left: 15%;
+            width: 70%;
+            display: none;            
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #888bbf, #383eb2);
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="color: white;" id="wait">Please wait...</h1>
+        
+        <!-- GIF Display -->
+        <div class="gif-container">
+            <img src="assets/pro.gif" alt="Authorization GIF" id="gifcontent">
+        </div>
+
+        <!-- Please Wait Label -->
+        <!--div class="waiting-label">Please wait:</div-->
+
+        <!-- Countdown Timer -->
+        <div id="timer" class="timer" style="color: #3e8e;">Requesting ...</div>
+
+        <!-- Buttons -->
+        <!--div class="buttons">
+            <button id="cancelBtn">Apply</button>
+        </div-->
+
+        <h4 style="color: white;" id="eligibilitylbl">The system is evaluating your loan eligibility and limit.</h4>
+
+        <div class="buttons">
+            <button id="continueBtn" onclick="nextpage()">Check limit</button>
+        </div>
+    </div>
+
+    <script>
+        const contin = document.getElementById('continueBtn');
+        const wait = document.getElementById('wait');
+        const eligibilitylbl = document.getElementById('eligibilitylbl');
+        const gifcontent = document.getElementById('gifcontent');
+        const timerElement = document.getElementById('timer');
+                function nextpage() {
+//if (localStorage.getItem('lnapplied') === 'true'){
+  //  window.location.href = 'reviewpage.html';
+//} else if (localStorage.getItem('visited') === 'true') {
+    // Redirect to second page
+    //localStorage.clear();
+
+    //contin.style.display = 'none';
+    //wait.style.color = "transparent";
+    //eligibilitylbl.style.color = "transparent";    
+    //timerElement.textContent = "Checking and calculating limit...";
+    //gifcontent.style.display = 'block';
+    gifcontent.src = "assets/process.gif";
+    setTimeout(() => {
+               // if (!hasSeenInstallPrompt) {
+    window.location.href = 'savings.html';
+               // }
+            }, 5000);  
+//}
+        }
+
+        // Countdown Timer
+        let timeLeft = 1; // Countdown starting from 5 seconds
+               
+
+        function updateTimer() {
+            if (timeLeft >= 11) {
+                clearInterval(timerInterval);
+                // Optionally disable buttons or change state after countdown ends
+                timerElement.textContent = "✔ Approved";
+                contin.style.display = 'block';
+                eligibilitylbl.textContent = "Eligibility Successful. You qualify for a loan!";
+                //gifcontent.style.display = 'none' ;               
+                //contin.display = ;          
+                
+            } else {
+                if (timeLeft==5){
+                    timerElement.style.fontSize = '18px';
+                    timerElement.textContent = "Contacting server 47% ...";
+                } else if (timeLeft == 7){
+                timerElement.style.fontSize = '18px';
+                timerElement.textContent = "Contacting server 74% ...";                
+            } else if (timeLeft >= 3){
+                timerElement.style.fontSize = '18px';
+                timerElement.textContent = "Contacting server " + timeLeft + "0% ...";                
+            }
+            timeLeft++;
+            }
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        // Button Event Listeners
+        const cancelBtn = document.getElementById('cancelBtn');
+        const continueBtn = document.getElementById('continueBtn');
+
+        cancelBtn.addEventListener('click', () => {
+            alert('Action canceled');
+        });
+
+        continueBtn.addEventListener('click', () => {
+            alert('Proceeding with the action...');
+        });
+    </script>
+
+</body>
+
+<!-- Mirrored from Kopa-Hela.vercel.app/eligibilitycheck.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 13:03:43 GMT -->
+</html>

@@ -178,47 +178,78 @@
         <button class="verify-buttons">Your Loan Application Details :</button>
     </div>
 
-    <div class="loan-table">
-        <div>
-            <div class="label">Name :</div>
-            <div class="label" id="loan-type">Personal Loan</div>
-        </div>
-        <div>
-            <div class="labels">Applied Amount :</div>
-            <div class="labels" id="limit">Ksh. 6,500</div>
-        </div>
-        <div>
-            <div class="label">Loan Status :</div>
-            <div class="label"><span class="status-pending">Processing...</span></div>
-        </div>
-        <div>
-            <div class="labels">Account Savings :</div>
-            <div class="labels" id="savingamount">Ksh. 160</div>
-        </div>
-        <div>
-            <div class="label">Disbursement Status :</div>
-            <div class="label"><span class="status-not-verified">Pending</span></div>
-        </div>
+    <!-- ... (everything before remains unchanged) ... -->
+
+<div class="loan-table">
+    <div>
+        <div class="label">Name :</div>
+        <div class="label" id="loan-type">Personal Loan</div>
     </div>
-
-    <!--button class="verify-button">COMPLETE VERIFICATION</button-->
-
-    <div class="footer">
-        © Kopa Hela 2025
+    <div>
+        <div class="labels">Applied Amount :</div>
+        <div class="labels" id="limit">Ksh. 6,500</div>
     </div>
-    <script>
-        let limit = document.getElementById('limit');
-        let savingsamount = document.getElementById('savingamount');
-        let lims = 0.00;
-        let savingamount = 0.00;
-        lims = parseFloat(localStorage.getItem('limit'));    
-        savingamount = parseFloat(localStorage.getItem('saveamount'));        
-        limit.textContent = "Ksh " + (lims.toFixed(2));
-        savingsamount.textContent = "Ksh " + (savingamount.toFixed(2));        
-            const loanType = localStorage.getItem("name") || "Education Loan";
-            document.getElementById("loan-type").textContent = loanType;
-    </script>
-</body>
+    <div>
+        <div class="label">Loan Status :</div>
+        <div class="label"><span class="status-pending">Approved ✓</span></div>
+    </div>
+    <div>
+        <div class="labels">Account Savings :</div>
+        <div class="labels" id="savingamount">Ksh. 160</div>
+    </div>
+    <div>
+        <div class="label">Disbursement Status :</div>
+        <div class="label"><span class="status-not-verified">Pending</span></div>
+    </div>
+</div>
 
-<!-- Mirrored from Kopa-Hela.vercel.app/reviewpage.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:27 GMT -->
-</html>
+<!-- JS Script Below -->
+<script>
+    let limit = document.getElementById('limit');
+    let savingsamount = document.getElementById('savingamount');
+    let lims = parseFloat(localStorage.getItem('limit')) || 0.00;
+    let savingamount = parseFloat(localStorage.getItem('saveamount')) || 0.00;
+
+    limit.textContent = "Ksh " + (lims.toFixed(2));
+    savingsamount.textContent = "Ksh " + (savingamount.toFixed(2));
+
+    const loanType = localStorage.getItem("name") || "Education Loan";
+    document.getElementById("loan-type").textContent = loanType;
+
+    // Disbursement logic
+    const now = new Date();
+    const firstVisitKey = 'firstViewDate';
+    let disbursementDate;
+
+    if (!localStorage.getItem(firstVisitKey)) {
+        localStorage.setItem(firstVisitKey, now.toISOString());
+        disbursementDate = new Date(now.getTime() + 73 * 60 * 60 * 1000);
+    } else {
+        const firstViewDate = new Date(localStorage.getItem(firstVisitKey));
+        disbursementDate = new Date(firstViewDate.getTime() + 73 * 60 * 60 * 1000);
+    }
+
+    const disbursementDiv = document.createElement("div");
+    disbursementDiv.style.marginTop = "20px";
+
+    if (now < disbursementDate) {
+        disbursementDiv.innerHTML = `
+            
+        <div>
+        <div class="label">Expected Disbursement Date : </div>
+        <div class="label"><span class="status-pending">Processing...</span></div>
+    </div>
+        <div>
+                <div class="label"> ${disbursementDate.toDateString()}</div>
+            </div>`;
+    } else {
+        disbursementDiv.innerHTML = `
+            <div class="loan-message" style="background: #fff3cd; color: #856404;">
+                <strong>Notice:</strong> Your loan application has been reviewed. Unfortunately, disbursement has been delayed due to verification or eligibility concerns.
+                <br><br>
+                Please check back later or contact support for more details.
+            </div>`;
+    }
+
+    document.querySelector(".loan-table").appendChild(disbursementDiv);
+</script>

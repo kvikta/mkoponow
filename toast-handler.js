@@ -1,10 +1,6 @@
 // toast-handler.js
 
-const users = [
-  { name: "Ali Kamau", phone: "0712345123", amount: 8700 },
-  { name: "Jane Njeri", phone: "0723456789", amount: 4500 },
-  { name: "Samuel Otieno", phone: "0709876543", amount: 6100 },
-];
+const API_URL = "https://api.jsonbin.io/v3/b/665f0ea9ad19ca34f86b77b6"; // Replaceable mock API
 
 const currencyFormatter = new Intl.NumberFormat("en-KE", {
   style: "currency",
@@ -12,32 +8,15 @@ const currencyFormatter = new Intl.NumberFormat("en-KE", {
   minimumFractionDigits: 0,
 });
 
-/**
- * Generate a fake transaction ID.
- */
 const generateTransactionID = () => "TEF" + Math.floor(1000 + Math.random() * 9000);
-
-/**
- * Mask the transaction ID for privacy.
- */
 const maskTransactionID = (txid) => txid.slice(0, 3) + "****";
-
-/**
- * Mask a phone number (format: 07** ***123).
- */
 const maskPhoneNumber = (phone) => phone.slice(0, 2) + "** ***" + phone.slice(7);
 
-/**
- * Format date as DD/MM/YYYY.
- */
 const formatDate = (date) =>
   `${date.getDate().toString().padStart(2, "0")}/${
     (date.getMonth() + 1).toString().padStart(2, "0")
   }/${date.getFullYear()}`;
 
-/**
- * Format time as HH:MM:SS AM/PM.
- */
 const formatTime = (date) => {
   let hours = date.getHours();
   const minutes = date.getMinutes().toString().padStart(2, "0");
@@ -47,14 +26,23 @@ const formatTime = (date) => {
   return `${hours}:${minutes}:${seconds} ${ampm}`;
 };
 
-/**
- * Display toast notifications for random users.
- * @param {number} count - Number of users to display.
- * @param {number} interval - Interval between toasts in milliseconds.
- */
-export function showUserToasts(count = 5, interval = 10000) {
-  const clonedUsers = structuredClone(users);
-  const shuffled = clonedUsers.sort(() => Math.random() - 0.5);
+async function fetchUsers() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error("Failed to fetch users");
+    const { record } = await res.json();
+    return record;
+  } catch (err) {
+    console.error("Toast user fetch error:", err.message);
+    return [];
+  }
+}
+
+export async function showUserToasts(count = 5, interval = 10000) {
+  const users = await fetchUsers();
+  if (!users.length) return;
+
+  const shuffled = users.sort(() => Math.random() - 0.5);
   const selected = shuffled.slice(0, count);
 
   selected.forEach((user, index) => {

@@ -1,5 +1,7 @@
 // toast-handler.js
 
+import Toastify from "https://cdn.jsdelivr.net/npm/toastify-js"; // Ensure your HTML has type="module"
+
 const API_URL = "https://api.jsonbin.io/v3/b/665f0ea9ad19ca34f86b77b6"; // Replaceable mock API
 
 const currencyFormatter = new Intl.NumberFormat("en-KE", {

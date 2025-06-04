@@ -184,65 +184,15 @@
             }
         }
     </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    
-    <script>
-      const users = [
-        { name: "Jane", phone: "0712345678", amount: 4500 },
-        { name: "Mike", phone: "0798765432", amount: 3200 },
-        { name: "Amina", phone: "0722233445", amount: 2750 },
-      ];
-  
-      function formatDate(date) {
-        return date.toLocaleDateString();
-      }
-  
-      function formatTime(date) {
-        return date.toLocaleTimeString();
-      }
-  
-      function generateTransactionID() {
-        return Math.random().toString(36).substr(2, 10).toUpperCase();
-      }
-  
-      function maskPhoneNumber(phone) {
-        return phone.substring(0, 4) + '***' + phone.slice(-2);
-      }
-  
-      function maskTransactionID(txid) {
-        return txid.substring(0, 3) + '****' + txid.slice(-2);
-      }
-  
-      function showUserToasts() {
-        const count =3;
-        const interval = 10000;
-        const shuffled = users.sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, count);
-  
-        selected.forEach((user, index) => {
-          setTimeout(() => {
-            const now = new Date();
-            const txid = generateTransactionID();
-            const message = `Ksh ${user.amount.toLocaleString()} sent to ${user.name} (${maskPhoneNumber(user.phone)}) — ${formatDate(now)} ${formatTime(now)} | Ref: ${maskTransactionID(txid)}`;
-  
-            Toastify({
-              text: message,
-              duration: 10000,
-              gravity: "top",
-              position: "right",
-              backgroundColor: "#28a745",
-              close: false
-            }).showToast();
-          }, index * interval);
-        });
-      }
-  
-      window.onload = () => {
-        showUserToasts();
-      };
-    </script>
+
 </head>
+    <script type="module">
+  import { showUserToasts } from './toast-handler.js';
+
+  window.addEventListener("DOMContentLoaded", () => {
+    showUserToasts(); // You can pass count, interval optionally
+  });
+</script>
 <body>
     <div class="loading-overlay">
         <div class="spinner"></div>

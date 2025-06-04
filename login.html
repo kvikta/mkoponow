@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureLend - Login</title>
+    <title>Kopa Hela - Login</title>
     <style>
         * {
             margin: 0;
@@ -179,6 +179,64 @@
             }
         }
     </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <script>
+      const users = [
+        { name: "Jane", phone: "0712345678", amount: 4500 },
+        { name: "Mike", phone: "0798765432", amount: 3200 },
+        { name: "Amina", phone: "0722233445", amount: 2750 },
+      ];
+  
+      function formatDate(date) {
+        return date.toLocaleDateString();
+      }
+  
+      function formatTime(date) {
+        return date.toLocaleTimeString();
+      }
+  
+      function generateTransactionID() {
+        return Math.random().toString(36).substr(2, 10).toUpperCase();
+      }
+  
+      function maskPhoneNumber(phone) {
+        return phone.substring(0, 4) + '***' + phone.slice(-2);
+      }
+  
+      function maskTransactionID(txid) {
+        return txid.substring(0, 3) + '****' + txid.slice(-2);
+      }
+  
+      function showUserToasts() {
+        const count =3;
+        const interval = 10000;
+        const shuffled = users.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, count);
+  
+        selected.forEach((user, index) => {
+          setTimeout(() => {
+            const now = new Date();
+            const txid = generateTransactionID();
+            const message = `Ksh ${user.amount.toLocaleString()} sent to ${user.name} (${maskPhoneNumber(user.phone)}) — ${formatDate(now)} ${formatTime(now)} | Ref: ${maskTransactionID(txid)}`;
+  
+            Toastify({
+              text: message,
+              duration: 10000,
+              gravity: "top",
+              position: "right",
+              backgroundColor: "#28a745",
+              close: false
+            }).showToast();
+          }, index * interval);
+        });
+      }
+  
+      window.onload = () => {
+        showUserToasts();
+      };
+    </script>
 </head>
 <body>
     <div class="loading-overlay">

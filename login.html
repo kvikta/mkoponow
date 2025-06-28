@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from Kopa-Hela.vercel.app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:26 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopa Hela - Login</title>
     <style>
         * {
-            margin: 0; 
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,10 +25,9 @@
             z-index: 1000;
         }
         .custom-toast {
-    margin-top: 10px;
-    z-index: 9999;
-    }
-
+            margin-top: 10px;
+            z-index: 9999;
+        }
 
         .spinner {
             width: 50px;
@@ -184,39 +180,19 @@
             }
         }
     </style>
-
 </head>
-    <script type="module">
-  import { showUserToasts } from './toast-handler.js';
-
-  window.addEventListener("DOMContentLoaded", () => {
-    showUserToasts(); // You can pass count, interval optionally
-  });
-</script>
 <body>
     <div class="loading-overlay">
         <div class="spinner"></div>
     </div>
-
-    <!--header class="header">
-        <svg viewBox="0 0 200 80" width="200" height="80" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 10 L160 30 L160 60 L100 75 L40 60 L40 30 Z" fill="#2c5282" />
-            <path d="M100 15 L150 32 L150 58 L100 70 L50 58 L50 32 Z" fill="#3182ce" />
-            <path d="M90 30 L110 30 L110 32 L100 32 L100 40 L110 40 C110 50 90 50 90 40 L90 35 M100 48 L100 52" 
-                  stroke="white" fill="none" stroke-width="4" stroke-linecap="round"/>
-            <path d="M85 60 L115 45" stroke="white" stroke-width="3"/>
-            <path d="M110 40 L118 43 L115 50" fill="none" stroke="white" stroke-width="3"/>
-            <text x="100" y="25" font-family="Arial" font-size="8" fill="white" text-anchor="middle" font-weight="bold">SECURELEND</text>
-        </svg>
-    </header-->
 
     <main class="login-panel">
         <h1 class="login-title">Welcome Back</h1>
         
         <form>
             <div class="form-group">
-                <label for="email">Phone Number</label>
-                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,}" placeholder="Enter your phone number">
             </div>
             
             <div class="form-group">
@@ -237,7 +213,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 SecureLend Financial Services. NMLS #1234567.</p>
+        <p>© 2025 SecureLend Financial Services. NMLS #1234567.</p>
     </footer>
 
     <script>
@@ -280,6 +256,4 @@
         });
     </script>
 </body>
-
-<!-- Mirrored from Kopa-Hela.vercel.app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 May 2025 12:58:27 GMT -->
 </html>
